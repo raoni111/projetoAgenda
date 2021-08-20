@@ -24,6 +24,8 @@
     "helmet": "^4.4.1",
     "mongoose": "^5.12.1",
     "regenerator-runtime": "^0.13.7",
+    "sass": "^1.38.0",
+    "sass-loader": "^12.1.0",
     "style-loader": "^2.0.0"
   },
   "devDependencies": {
