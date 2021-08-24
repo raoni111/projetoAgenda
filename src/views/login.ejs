@@ -5,9 +5,7 @@
     <section class="content-info">
         <h1>Criar conta ou logar</h1>
         <p>Façã login ou crie uma conta abaixo</p>
-        <div class="content-alert">
-            <p class="alert-error">Texto de alerta</p>
-        </div>
+        <%- include('includes/messages') %>
         <div class="content-forms">
             <div class="form">
                 <div>
@@ -16,11 +14,11 @@
                 </div>
                 <div>
                     <form action="/login/register" method="POST">
-                        <input type="hidden" name="_csrf" value="<%= csrfToken %> ">
-                        <label for="e-mail">Seu e-mail</label><br>
-                        <input id="email" name="email" type="text" placeholder="Digite o seu e-mail"><br>
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <label for="emailRegister">Seu e-mail</label><br>
+                        <input id="emailRegister" name="email" type="text" placeholder="Digite o seu e-mail"><br>
                         <label for="senha">Sua senha</label><br>
-                        <input id="senha" name="senha" type="text" placeholder="Digite a sua senhal"><br>
+                        <input id="senhaRegister" name="senha" type="password" placeholder="Digite a sua senhal"><br>
                         <button class="button" id="Registrar">Registrar</button>
                     </form>
                 </div>
@@ -32,11 +30,11 @@
                 </div>
                 <div>
                     <form action="/login/login" method="POST">
-                        <input type="hidden" name="_csrf" value="<%= csrfToken %> ">
-                        <label for="e-mail">Seu e-mail</label><br>
-                        <input id="email" name="email" type="text" placeholder="Digite o seu e-mail"><br>
+                        <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                        <label for="emailLigin">Seu e-mail</label><br>
+                        <input id="emailLigin" name="email" type="text" placeholder="Digite o seu e-mail"><br>
                         <label for="senha">Sua senha</label><br>
-                        <input id="senha" name="senha" type="text" placeholder="Digite a sua senhal"><br>
+                        <input id="senhaLogin" name="senha" type="password" placeholder="Digite a sua senhal"><br>
                         <button class="button" id="Logar">Logar</button>
                     </form>
                 </div>
