@@ -15,6 +15,19 @@ class  Login {
         this.error = [];
         this.user = null;
     }
+    async login() {
+        this.valida()
+        if(this.error.length > 0) return;
+        this.user = await LoginModel.findOne( { email: this.body.email});
+        if(!this.user) {
+            this.error.push('O usuario nao existe!');
+        }
+        if(!bcrypt.compareSync(this.body.senha, this.user.senha)) {
+            this.error.push('Senha invalida');
+            this.user = null;
+        }
+
+    }
     async register() {
         this.valida()
         if(this.error.length > 0) return;
@@ -25,19 +38,11 @@ class  Login {
         const salt = bcrypt.genSaltSync()
         this.body.senha = bcrypt.hashSync(this.body.senha, salt);
 
-        try {
-            this.user = await LoginModel.create(this.body);
-        } catch (error) {
-            console.log(error)
-        }
+        this.user = await LoginModel.create(this.body);
     }
     async usuarioExiste() {
-        try {
-            const user = await LoginModel.findOne( { email: this.body.email});
-            if(user) this.error.push('Usuario ja existe');
-        }catch (error) {
-            console.log(error)
-        }
+        this.user = await LoginModel.findOne( { email: this.body.email});
+        if(this.user) this.error.push('Usuario ja existe');
 
     }
     valida() {

@@ -3,8 +3,17 @@
     <div>
         <ul>
             <li>
-                <a href="/login/index">login</a>
+                <a href="/contato/index">Cadastrar contato</a>
             </li>
+            <% if(user) { %> 
+                <li>
+                    <a href="/login/logaut">Sair</a>
+                </li>
+            <% } else {%>
+                <li>
+                    <a href="/login/index">Entrar</a>
+                </li>
+            <% } %>  
         </ul>
     </div>
 </nav>

@@ -3,13 +3,9 @@
 <%- include('includes/nav.ejs') %>
 <main>
     <section class="content-info">
-        <h1>Agenda</h1>
-        <p>Esses são os seus contatos</p>
+        <h1>Hola <%= user.email  %> </h1>
+        <p>Você precisa sair para criar outra conta</p>
         <%- include('includes/messages') %>
-        <div class="content-table">
-            <table>
-            </table>
-        </div>
     </section>
 </main>
 <%- include('includes/footer.ejs') %>

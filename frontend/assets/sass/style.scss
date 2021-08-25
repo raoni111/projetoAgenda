@@ -23,6 +23,7 @@ body {
       text-decoration: none;
     }
     ul {
+      @include displayFlex(row, space-between, center);
       list-style: none;
     }
   }
