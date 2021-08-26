@@ -1,0 +1,42 @@
+.content-forms {
+    width: 100%;
+    margin-top: 3rem;
+    .form-contato {
+        @include displayFlex(column, center, start);
+        padding: 1rem;
+        width: 100%;
+        div {
+            width: 100%;
+            margin-top: 2rem;
+            form {
+                @include displayFlex(column, center, start);
+                width: 100% !important;
+                label {
+                    font-size: 2rem;
+                }
+                input {
+                    width: 100%;
+                    padding:.6rem;
+                    margin-bottom: 1rem;
+                    outline: none;
+                    border: 1px solid $border-cor-input;
+                    border-radius: 3px;
+                }
+                .button {
+                    width: 7rem;
+                    padding:.5rem;
+                    border: 2px solid $button-cor;
+                    background-color: transparent;
+                    border-radius: 3px;
+                    transition: all .3s ease-in-out;
+                    &:hover {
+                        color:white;
+                        border-radius: 7px;
+                        background-color: $button-cor;
+                    }
+                }
+            }
+        }
+    }
+
+}
